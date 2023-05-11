@@ -3,9 +3,24 @@
 
 
 def uppercase(str):
-for c in str:
-if ord(c) >= 97 and ord(c) <= 122:
-c = chr(ord(c) - 32)
-print("{}".format(c), end="")
-print("")
+  """
+  Converts all lowercase letters in a string to uppercase.
+
+  Args:
+    str: The string to convert.
+
+  Returns:
+    The string with all lowercase letters converted to uppercase.
+  """
+
+  for c in str:
+    if ord(c) >= 97 and ord(c) <= 122:
+      c = chr(ord(c) - 32)
+    print("{}".format(c), end="")
+  print("")
+
+
+if __name__ == "__main__":
+  str = "hello world"
+  uppercase(str)
 
