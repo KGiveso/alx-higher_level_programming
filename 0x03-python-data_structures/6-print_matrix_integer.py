@@ -3,17 +3,21 @@ def print_matrix_integer(matrix=[[]]):
   """Prints a matrix of integers.
 
   Args:
-    matrix: A list of lists, where each inner list contains an integer.
+    matrix: A list of lists of integers.
 
   Raises:
-    ValueError: If the matrix is not a list of lists.
+    ValueError: If the matrix is not rectangular.
 
   """
-  if not isinstance(matrix, list):
-    raise ValueError("matrix must be a list of lists")
+  if not matrix:
+    return
 
-  for row in matrix:
-    for value in row:
-      print(str.format("{}", value), end=" ")
+  num_rows = len(matrix)
+  num_cols = len(matrix[0])
+
+  for row in range(num_rows):
+    for col in range(num_cols):
+      print("{0:5d}".format(matrix[row][col]), end=" ")
     print()
+
 
