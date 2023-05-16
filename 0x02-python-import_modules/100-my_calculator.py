@@ -1,22 +1,26 @@
 # 100-my_calculator.py
 
-if __name__ == "__main__":
-    """Handle basic arithmetic operations."""
-    from calculator_1 import add, sub, mul, div
-    import sys
+import sys
+from calculator_1 import add, subtract, multiply, divide
 
-    if len(sys.argv) - 1 != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+if len(sys.argv) != 4:
+    print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+    sys.exit(1)
 
-    a = int(sys.argv[1])
-    operator = sys.argv[2]
-    b = int(sys.argv[3])
+a = int(sys.argv[1])
+operator = sys.argv[2]
+b = int(sys.argv[3])
 
-    if operator not in ["+", "-", "*", "/"]:
-        print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
+if operator == '+':
+    result = add(a, b)
+elif operator == '-':
+    result = subtract(a, b)
+elif operator == '*':
+    result = multiply(a, b)
+elif operator == '/':
+    result = divide(a, b)
+else:
+    print("Unknown operator. Available operators: +, -, * and /")
+    sys.exit(1)
 
-    result = getattr(operators, operator)(a, b)
-    print("{} {} {} = {}".format(a, operator, b, result))
-
+print(f"{a} {operator} {b} = {result}")
