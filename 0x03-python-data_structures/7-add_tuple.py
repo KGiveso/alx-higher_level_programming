@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def add_tuple(tuple_a=(), tuple_b=()):
   """Adds 2 tuples.
 
@@ -14,11 +15,12 @@ def add_tuple(tuple_a=(), tuple_b=()):
   Raises:
     ValueError: If either tuple is empty.
   """
+
   # Check if either tuple is empty
   if not tuple_a:
-    raise ValueError("Tuple a is empty")
+    return ()
   if not tuple_b:
-    raise ValueError("Tuple b is empty")
+    return ()
 
   # Get the first two elements of each tuple
   a1, a2 = tuple_a[:2]
