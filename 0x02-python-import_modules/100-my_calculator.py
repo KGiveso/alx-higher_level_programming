@@ -11,7 +11,7 @@ def main():
     a = int(a)
     b = int(b)
 
-    if operator == "+":
+    if operator == "+
         result = calculator_1.add(a, b)
     elif operator == "-":
         result = calculator_1.subtract(a, b)
