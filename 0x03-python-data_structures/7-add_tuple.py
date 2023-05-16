@@ -15,16 +15,16 @@ def add_tuple(tuple_a=(), tuple_b=()):
   Raises:
     ValueError: If either tuple is empty.
   """
-
   # Check if either tuple is empty
   if not tuple_a:
-    return ()
-  if not tuple_b:
-    return ()
+    a1 = 0
+  else:
+    a1 = tuple_a[0]
 
-  # Get the first two elements of each tuple
-  a1, a2 = tuple_a[:2]
-  b1, b2 = tuple_b[:2]
+  if not tuple_b:
+    a2 = 0
+  else:
+    a2 = tuple_b[0]
 
   # Add the first two elements of each tuple
   c1 = a1 + b1
@@ -32,3 +32,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
   # Return the resulting tuple
   return (c1, c2)
+
+
