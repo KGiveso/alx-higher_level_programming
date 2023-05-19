@@ -1,14 +1,22 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
-  """Prints a matrix of integers."""
-  # Check if matrix is empty
-  if not matrix:
-    return
 
-  # Iterate over the rows of the matrix
-  for row in matrix:
-    # Iterate over the columns of the row
-    for col in row:
-      # Print the column
-      print(str.format("{0}", col), end=" ")
-    print()
+def print_matrix_integer(matrix=[[]]):
+    """
+    Prints a matrix of integers
+    ...
+
+    Parameters
+    ----------
+    matrix : list (of lists)
+        The list to print
+
+    Return:
+        None
+    """
+
+    for p in range(len(matrix)):
+        for a in range(len(matrix[p])):
+            print("{:d}".format(matrix[p][a]), end="")
+            if a != (len(matrix[p]) - 1):
+                print(" ", end="")
+        print("")

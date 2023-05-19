@@ -1,32 +1,16 @@
 #!/usr/bin/python3
+
 def add_tuple(tuple_a=(), tuple_b=()):
-  """Adds 2 tuples.
+    # Extract the first two integers from each tuple
+    a = tuple_a[:2]
+    b = tuple_b[:2]
 
-  Args:
-    tuple_a: The first tuple.
-    tuple_b: The second tuple.
+    # If a tuple is smaller than 2, append 0 to make it a 2-element tuple
+    if len(a) < 2:
+        a += (0,) * (2 - len(a))
+    if len(b) < 2:
+        b += (0,) * (2 - len(b))
 
-  Returns:
-    A tuple with 2 integers:
-      The first element should be the addition of the first element of each argument
-      The second element should be the addition of the second element of each argument
-
-  Raises:
-    ValueError: If either tuple is empty.
-  """
-  # Check if either tuple is empty
-  if not tuple_a:
-    raise ValueError("Tuple a is empty")
-  if not tuple_b:
-    raise ValueError("Tuple b is empty")
-
-  # Get the first two elements of each tuple
-  a1, a2 = tuple_a[:2]
-  b1, b2 = tuple_b[:2]
-
-  # Add the first two elements of each tuple
-  c1 = a1 + b1
-  c2 = a2 + b2
-
-  # Return the resulting tuple
-  return (c1, c2)
+    # Add the corresponding elements from both tuples
+    result = (a[0] + b[0], a[1] + b[1])
+    return result

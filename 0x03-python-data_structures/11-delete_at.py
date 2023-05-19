@@ -1,6 +1,6 @@
-
 #!/usr/bin/python3
 def delete_at(my_list=[], idx=0):
+
 """
 Deletes the item at a specific position in a list.
 
@@ -22,7 +22,12 @@ if idx < 0 or idx >= len(my_list):
   for i in range(idx + 1, len(my_list)):
     my_list[i - 1] = my_list[i]
 
-  # Remove the last item in the list.
-  my_list.pop()
+    # Check if idx is negative or out of range
+    if idx < 0 or idx >= len(my_list):
+        return my_list
 
-  return my_list
+
+    # Create a new list with all elements except the one at idx
+    new_list = my_list[:idx] + my_list[idx + 1:]
+
+    return new_list
