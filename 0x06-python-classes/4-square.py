@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Square class that access and update private attribute"""
+"""Write class squar that access and update private attribute"""
 
 
 class Square:
@@ -8,20 +8,20 @@ class Square:
         size: size of square
     """
     def __init__(self, size=0):
-        self.size = size
+        self._size = size
 
     @property
     def size(self):
-        """Retrieves the instance attribute"""
+        """find the instance attribute"""
 
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets value to size and checks for errors"""
+        """Record value to size and checks for errors"""
 
         if type(value) != int:
-            raise TypeError("size must be an integer")
+            raise TypeError("size must be a number")
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
