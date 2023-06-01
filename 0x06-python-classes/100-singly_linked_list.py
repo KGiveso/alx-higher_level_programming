@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Singly linked list"""
+"""Write class nodes that defines  a node of a singly listSingly linked list"""
 
 
 class Node:
     """__init__ initialize Node class and its properties
     Args:
-        data: int
-        next_node: link to next node
+        data: integer
+        next_node: link nodes next to node
     """
 
     def __init__(self, data, next_node=None):
@@ -15,13 +15,13 @@ class Node:
 
     @property
     def data(self):
-        """Retrieves the instance attribute for data"""
+        """gets the instance attribute for data"""
 
         return self.__data
 
     @property
     def next_node(self):
-        """Retrieves the instance attribute for next node"""
+        """get the instance attribute for next node"""
 
         return self.__next_node
 
