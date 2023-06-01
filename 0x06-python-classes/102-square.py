@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Square class that access and update private attribute"""
+"""write the Square class that access and update private attribute"""
 
 
 class Square:
     """__init__method that initialize a square class
-    Args:
+    string:
         size: size of square
     """
     def __init__(self, size=0):
@@ -12,7 +12,7 @@ class Square:
 
     @property
     def size(self):
-        """Retrieves the instance attribute"""
+        """gets the instance attribute or feature"""
 
         return self.__size
 
