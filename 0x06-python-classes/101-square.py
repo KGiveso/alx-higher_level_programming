@@ -65,3 +65,22 @@ class Square:
                 for col in range(self.__size):
                     print("#", end="")
                 print("")
+
+    def __str__(self):
+        """Prints the square based on the size with '#'
+        Return:
+            returns new line
+        """
+
+        if self.__size == 0:
+            print("")
+        else:
+            for i in range(self.position[1]):
+                print("")
+            for row in range(self.__size):
+                print(" " * self.position[0], end="")
+                for col in range(self.__size):
+                    print("#", end="")
+                if row != self.__size - 1:
+                    print("")
+        return ""
