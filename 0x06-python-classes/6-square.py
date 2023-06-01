@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Square class that prints a square"""
-
+"""Write Square class that prints a square"""
 
 class Square:
     """__init__method that initialize a square class
@@ -10,12 +9,12 @@ class Square:
     """
 
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self._size = size
+        self._position = position
 
     @property
     def size(self):
-        """Retrieves the instance attribute for size"""
+        """get the instance attribute for size"""
 
         return self.__size
 
