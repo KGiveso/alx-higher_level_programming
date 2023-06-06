@@ -3,16 +3,27 @@
 
 
 class Rectangle:
-    """__init__ - initialize a rectangle class
+    """Rectangle class created with width and height
 
-    Args:
-        width (int): width of the rectangle
-        height (int): height of the rectangle
+    Attributes:
+        number_of_instances (int): shows the number of instances
+        created and deleted
+        print_symbol (any type): symbol for string representation
     """
 
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
-        self.height = height
+        """__init__ - initialize a rectangle class
+
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+        """
         self.width = width
+        self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -60,6 +71,26 @@ class Rectangle:
         perimeter = 2 * self.__width + 2 * self.__height
         return perimeter
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on the area"""
+
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if Rectangle.area(rect_1) > Rectangle.area(rect_2):
+            return rect_1
+        if Rectangle.area(rect_1) < Rectangle.area(rect_2):
+            return rect_2
+        return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangle instance"""
+
+        return cls(size, size)
+
     def __str__(self):
         """Prints the rectangle based on the width and height with '#'"""
 
@@ -68,7 +99,7 @@ class Rectangle:
         rect = ""
         for height in range(self.__height):
             for width in range(self.__width):
-                rect += "#"
+                rect += str(self.print_symbol)
             if height < self.__height - 1:
                 rect += "\n"
         return rect
@@ -81,4 +112,5 @@ class Rectangle:
     def __del__(self):
         """Delete an instance of rectangle"""
 
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
