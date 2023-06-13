@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a module"b""
+"""Defines a module"""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
