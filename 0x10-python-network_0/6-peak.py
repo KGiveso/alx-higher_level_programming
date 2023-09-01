@@ -1,11 +1,30 @@
 #!/usr/bin/python3
-""" finds a peak in a list of unsorted integers """
+"""
+findpeak module
+"""
+
+
+def peak_alg(arr, low, high, n):
+    """ algorithm"""
+
+    mid = (low + high) / 2
+    mid = int(mid)
+
+    if ((mid == 0 or arr[mid - 1] <= arr[mid]) and
+       (mid == n - 1 or arr[mid + 1] <= arr[mid])):
+        return arr[mid]
+
+    elif (mid > 0 and arr[mid + 1] > arr[mid]):
+        return peak_alg(arr, (mid + 1), high, n)
+
+    else:
+        return peak_alg(arr, low, (mid - 1), n)
 
 
 def find_peak(list_of_integers):
-    if list_of_integers is None:
+    """ finds a peak in an array """
+    if list_of_integers is None or len(list_of_integers) == 0:
         return None
-    for idx, val in enumerate(list_of_integers):
-        if idx != 0 and idx != len(list_of_integers) - 1:
-            if list_of_integers[idx - 1] < val > list_of_integers[idx + 1]:
-                return val
+    n = len(list_of_integers)
+    res = peak_alg(list_of_integers, 0, n - 1, n)
+    return res
